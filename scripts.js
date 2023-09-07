@@ -28,15 +28,15 @@ let endIndex = 36;
 const extracted = books.slice(startIndex, endIndex)
 
 
-// Iterate over an array called 'extracted'
+// Iterates over an array called 'extracted'
 for (let i = 0; i < extracted.length; i++) {
     // Create a new HTML 'dl' element and assign it to the 'preview' variable
     const preview = document.createElement('dl');
     
-    // Add a class name 'preview' to the 'preview' element
+    // Added a class name 'preview' to the 'preview' element
     preview.className = 'preview';
     
-    // Create a 'fragment' to efficiently append multiple 'preview' elements
+    // Created a 'fragment' to efficiently append multiple 'preview' elements
     fragment.appendChild(preview);
     
     // Set custom data attributes on the 'preview' element using data from 'books' array
@@ -44,7 +44,7 @@ for (let i = 0; i < extracted.length; i++) {
     preview.dataset.title = books[i].title;
     preview.dataset.image = books[i].image;
     
-    // Create a custom subtitle by combining the author's name and the publication year
+    // Created a custom subtitle by combining the author's name and the publication year
     preview.dataset.subtitle = `${authors[books[i].author]} (${(new Date(books[i].published)).getFullYear()})`;
     
     // Set the 'description' and 'genre' custom data attributes
@@ -67,7 +67,7 @@ for (let i = 0; i < extracted.length; i++) {
         //Debugging
     //console.log(preview);
     
-    // Append the 'preview' element to the 'fragment'
+    // Appending the 'preview' element to the 'fragment'
     fragment.appendChild(preview);
 }
 
@@ -176,15 +176,13 @@ const showMoreButton = document.querySelector('[data-list-button]')
     const showMoreButtonText = `Show More (${numItemsToShow})`
     showMoreButton.textContent = showMoreButtonText
 
-//addEventListener: a function that adds an event listener to an element.
-showMoreButton.addEventListener('click', () => {/*  */
+//showMoreButton a function that adds an event listener to an element.
+showMoreButton.addEventListener('click', () => {
     const fragment = document.createDocumentFragment()
     startIndex += 36;
     endIndex += 36;
     const startIndex1 = startIndex
     const endIndex1 = endIndex
-    console.log(startIndex1)
-    console.log(endIndex1)
     const extracted = books.slice(startIndex1, endIndex1)
     for (const {author ,image, title, id , description, published} of extracted) {
         const preview = document.createElement('dl')
