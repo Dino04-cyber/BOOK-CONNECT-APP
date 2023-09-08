@@ -3,7 +3,6 @@
 <body>
     <h1>Book Connect App</h1>
 
-  <h2>Description</h2>
   
   Book Connect is a web application for browsing and exploring a collection of books. 
   You can search for books, view details, and even change the app's theme. 
