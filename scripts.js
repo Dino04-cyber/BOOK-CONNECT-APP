@@ -8,7 +8,8 @@ let page = 1;
 if (!books && !Array.isArray(books)) throw new Error('Source required') 
 if (!page && page.length < 2) throw new Error('Range must be an array with two numbers')
 
-console.log(`Page ${page}`)//Checking if the pages are responding 
+//Checking if the pages are responding 
+//console.log(`Page ${page}`)
 
 const day = {
     dark: '10, 10, 20',
@@ -140,8 +141,9 @@ for (const genreId in genres) {
   const optionElement = document.createElement('option')
   optionElement.value = genreId
   optionElement.textContent = genres[genreId]
-
- console.log( optionElement.value +' '+ optionElement.textContent)
+    
+  //DEBUGGING
+ //console.log( optionElement.value +' '+ optionElement.textContent)
   selectedGenre.appendChild(optionElement)
 }
 
@@ -182,7 +184,9 @@ showMoreButton.textContent = showMoreButtonText
 showMoreButton.addEventListener('click', () => {
     const numItemsToShow = (books.length - endIndex);
     showMoreButton.textContent = `Show More (${numItemsToShow})`;
-    console.log(numItemsToShow)
+
+    //CHECKING IF THE NUMBER OF ITEMS TO SHOW ARE SUBTRACTING ACCORDINGLY
+    //console.log(numItemsToShow)
     if (numItemsToShow > 0) {
         // Subtract 36 from 'endIndex' to show the next set of books
         endIndex += 36;
