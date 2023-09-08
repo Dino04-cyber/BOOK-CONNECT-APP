@@ -9,7 +9,7 @@ if (!books && !Array.isArray(books)) throw new Error('Source required')
 if (!page && page.length < 2) throw new Error('Range must be an array with two numbers')
 
 console.log(`Page ${page}`)//Checking if the pages are responding 
-//Added const to declare the day and night variables 
+
 const day = {
     dark: '10, 10, 20',
     light: '255, 255, 255',
@@ -105,6 +105,8 @@ document.querySelector("[data-settings-overlay]").style.display = "none";
 const themeConfiguration = document.querySelector('[data-settings-theme]')
 //saveButton variable holds a reference to the save button element.
 const saveBtn = document.querySelector("body > dialog:nth-child(5) > div > div > button.overlay__button.overlay__button_primary")
+
+
 saveBtn.addEventListener('click', (event) =>{
     event.preventDefault()
   if (themeConfiguration.value === 'day') {
@@ -172,18 +174,18 @@ bookClick.addEventListener('click', detailsToggle)
 const showMoreButton = document.querySelector('[data-list-button]')
 
 // Changed the text of the "Show More" button to display how many more books will be displayed
-    const numItemsToShow = Math.min(books.length - endIndex,)
-    const showMoreButtonText = `Show More (${numItemsToShow})`
-    showMoreButton.textContent = showMoreButtonText
+const numItemsToShow = Math.min(books.length - endIndex)
+const showMoreButtonText = `Show More (${numItemsToShow})`
+showMoreButton.textContent = showMoreButtonText
 
 //showMoreButton a function that adds an event listener to an element.
 showMoreButton.addEventListener('click', () => {
-    const fragment = document.createDocumentFragment()
-    startIndex += 36;
-    endIndex += 36;
-    const startIndex1 = startIndex
-    const endIndex1 = endIndex
-    const extracted = books.slice(startIndex1, endIndex1)
+    const numItemsToShow = (books.length - endIndex);
+    showMoreButton.textContent = `Show More (${numItemsToShow})`;
+    console.log(numItemsToShow)
+    if (numItemsToShow > 0) {
+        // Subtract 36 from 'endIndex' to show the next set of books
+        endIndex += 36;
     for (const {author ,image, title, id , description, published} of extracted) {
         const preview = document.createElement('dl')
         preview.className = 'preview'
@@ -208,4 +210,4 @@ showMoreButton.addEventListener('click', () => {
     //bookList a variable that holds a reference to the element that will contain the book previews.
     const bookList = document.querySelector('[data-list-items]') 
     bookList.appendChild(fragment)
-})
+}})
