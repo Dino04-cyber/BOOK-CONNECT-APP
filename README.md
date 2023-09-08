@@ -12,7 +12,7 @@
   <h2>Usage</h2>
     <ol>
         <li>Click on the search button to start exploring books.</li>
-        <li>Use the search options to filter books by author or genre.(Search feuture does not completely work yet)</li>
+        <li>Use the search options to filter books by author or genre.(Search feuture does not completely work yet')</li>
         <li>Click on a book preview to see its details.</li>
         <li>Toggle between the day and night themes for a different visual experience.</li>
         <li>Click the "Show More" button to load additional book previews.</li>
