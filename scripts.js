@@ -5,7 +5,7 @@ import {authors, genres, books , BOOKS_PER_PAGE} from './data.js'
 const matches = books;
 let page = 1;
 
-if (!books && !Array.isArray(books)) throw new Error('Source required') 
+if (!matches && !Array.isArray(matches)) throw new Error('Source required') 
 if (!page && page.length < 2) throw new Error('Range must be an array with two numbers')
 
 //Checking if the pages are responding 
@@ -174,22 +174,21 @@ bookClick.addEventListener('click', detailsToggle)
 
 //THIS CODE DISPLAYS 'ShowMore' BUTTON 
 const showMoreButton = document.querySelector('[data-list-button]')
+    // Changed the text of the "Show More" button to display how many more books will be displayed
+    const numItemsToShow = Math.min(books.length - endIndex,)
+    const showMoreButtonText = `Show More (${numItemsToShow})`
+    showMoreButton.textContent = showMoreButtonText
 
-// Changed the text of the "Show More" button to display how many more books will be displayed
-const numItemsToShow = Math.min(books.length - endIndex)
-const showMoreButtonText = `Show More (${numItemsToShow})`
-showMoreButton.textContent = showMoreButtonText
-
-//showMoreButton a function that adds an event listener to an element.
-showMoreButton.addEventListener('click', () => {
-    const numItemsToShow = (books.length - endIndex);
-    showMoreButton.textContent = `Show More (${numItemsToShow})`;
-
-    //CHECKING IF THE NUMBER OF ITEMS TO SHOW ARE SUBTRACTING ACCORDINGLY
-    //console.log(numItemsToShow)
-    if (numItemsToShow > 0) {
-        // Subtract 36 from 'endIndex' to show the next set of books
-        endIndex += 36;
+//addEventListener: a function that adds an event listener to an element.
+showMoreButton.addEventListener('click', () => {         
+    const fragment = document.createDocumentFragment()
+    startIndex += 36;
+    endIndex += 36;
+    const startIndex1 = startIndex
+    const endIndex1 = endIndex
+    console.log(startIndex1)
+    console.log(endIndex1)
+    const extracted = books.slice(startIndex1, endIndex1)
     for (const {author ,image, title, id , description, published} of extracted) {
         const preview = document.createElement('dl')
         preview.className = 'preview'
@@ -214,4 +213,4 @@ showMoreButton.addEventListener('click', () => {
     //bookList a variable that holds a reference to the element that will contain the book previews.
     const bookList = document.querySelector('[data-list-items]') 
     bookList.appendChild(fragment)
-}})
+})
