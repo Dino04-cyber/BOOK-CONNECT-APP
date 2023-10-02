@@ -1,15 +1,27 @@
 //This imports the the const variables from the data.js file 
 import {authors, genres, books , BOOKS_PER_PAGE} from './data.js' 
 
-//Edited the two variables using const and let so it could be called properly 
+/**
+ * Checks the validity of 'matches' and 'page' variables.
+ *
+ * @param {*} matches - The 'matches' variable to validate.
+ * @param {*} page - The 'page' variable to validate.
+ * @throws {Error} Throws an error if 'matches' is not an array or 'page' is not an array with two numbers.
+ */
+const validateMatchesAndPage = (matches, page) => {
+    if (!matches && !Array.isArray(matches)) {
+        throw new Error('Source required');
+    }
+
+    if (!page || !Array.isArray(page) || page.length !== 2 || !page.every(num => typeof num === 'number')) {
+        throw new Error('Range must be an array with two numbers');
+    }
+};
+
+// Example usage:
 const matches = books;
-let page = 1;
-
-if (!matches && !Array.isArray(matches)) throw new Error('Source required') 
-if (!page && page.length < 2) throw new Error('Range must be an array with two numbers')
-
-//Checking if the pages are responding 
-//console.log(`Page ${page}`)
+let page = [1, 2];
+validateMatchesAndPage(matches, page);
 
 const day = {
     dark: '10, 10, 20',
