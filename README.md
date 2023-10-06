@@ -18,3 +18,19 @@
     </ol>
   </body>
 
+  <h2>Changes</h2>
+## Improvements
+
+Here are the recent improvements made to the project:
+
+1. **Added Documentation Comments**: Improved code readability and understanding by adding documentation comments to explain functions, classes, and important sections of the code.
+
+2. **Created Book Class**: Introduced a `Book` class to better organize and manage book-related data and functions, promoting a more structured and object-oriented approach.
+
+3. **Extracted Preview Creation into Function**: Abstracted the process of creating book previews into a dedicated function, enhancing code reusability and maintainability.
+
+4. **Used Consistent Spacing and CamelCase Names**: Ensured code consistency by using consistent spacing and adopting camelCase naming conventions throughout the project.
+
+5. **Modularized Concerns and Reduced Duplication**: Reorganized and modularized the codebase to reduce code duplication and make it easier to manage different concerns separately.
+
+These improvements enhance the overall quality of the project and make it more maintainable and developer-friendly.
