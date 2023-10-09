@@ -33,4 +33,8 @@ Here are the recent improvements made to the project:
 
 5. **Modularized Concerns and Reduced Duplication**: Reorganized and modularized the codebase to reduce code duplication and make it easier to manage different concerns separately.
 
+<<<<<<< HEAD
 These improvements enhance the overall quality of the project and make it more maintainable and developer-friendly.
+=======
+These improvements enhance the overall quality of the project and make it more maintainable and developer-friendly.
+>>>>>>> 78a390b88820ab324d1a95b3a44f58b9d53b057d
