@@ -3,10 +3,12 @@ import { authors, genres, books, BOOKS_PER_PAGE } from './data.js';
 // Validation class adhering to SRP (Single Responsibility Principle)
 class Validator {
     static validateMatchesAndPage(matches, page) {
+        // Check if 'matches' is valid data
         if (!matches || !Array.isArray(matches)) {
             throw new Error('Invalid source data');
         }
 
+        // Check if 'page' is a valid page range
         if (!page || !Array.isArray(page) || page.length !== 2 || !page.every(num => typeof num === 'number')) {
             throw new Error('Invalid page range, should be an array with two numbers');
         }
@@ -32,18 +34,22 @@ const night = {
 class ThemeManager {
     static setTheme(themeConfiguration) {
         if (themeConfiguration === 'day') {
+            // Apply the day theme
             ThemeManager.applyDayTheme();
         } else if (themeConfiguration === 'night') {
+            // Apply the night theme
             ThemeManager.applyNightTheme();
         }
     }
 
     static applyDayTheme() {
+        // Set the CSS variables for the day theme
         document.querySelector('body').style.setProperty('--color-dark', day.dark);
         document.querySelector('body').style.setProperty('--color-light', day.light);
     }
 
     static applyNightTheme() {
+        // Set the CSS variables for the night theme
         document.querySelector('body').style.setProperty('--color-dark', night.dark);
         document.querySelector('body').style.setProperty('--color-light', night.light);
     }
@@ -51,6 +57,7 @@ class ThemeManager {
 
 class ShowMoreButtonHandler {
     static handleShowMoreClick() {
+        // Update the book previews when 'Show More' is clicked
         startIndex += BOOKS_PER_PAGE;
         endIndex += BOOKS_PER_PAGE;
         this.updateBookPreviews();
@@ -59,11 +66,13 @@ class ShowMoreButtonHandler {
     static updateBookPreviews() {
         const fragment = document.createDocumentFragment();
 
+        // Calculate the number of items to show in the next batch
         const numItemsToShow = Math.min(books.length - endIndex, 36);
 
         startIndex += numItemsToShow;
         endIndex += numItemsToShow;
 
+        // Extract the next batch of books to display
         const extracted = books.slice(startIndex, endIndex);
 
         for (const { author, image, title, id, description, published } of extracted) {
@@ -71,6 +80,7 @@ class ShowMoreButtonHandler {
             fragment.appendChild(preview);
         }
 
+        // Append the new book previews to the list
         const bookList = document.querySelector('[data-list-items]');
         bookList.appendChild(fragment);
 
@@ -154,21 +164,25 @@ bookListData.appendChild(fragment);
 // Add event listeners for search and settings buttons
 const headerSearch = document.querySelector("[data-header-search]");
 headerSearch.addEventListener('click', () => {
+    // Show the search overlay
     document.querySelector("[data-search-overlay]").style.display = "block";
 });
 
 const searchCancellation = document.querySelector("[data-search-cancel]");
 searchCancellation.addEventListener('click', () => {
+    // Hide the search overlay
     document.querySelector("[data-search-overlay]").style.display = "none";
 });
 
 const settingsOverlay = document.querySelector("[data-header-settings]");
 settingsOverlay.addEventListener('click', () => {
-    document.querySelector("[data-settings-overlay]").style.display = "block";
+    // Show the settings overlay
+    document.querySelector("[data-settings-overlay]").style display = "block";
 });
 
 const settingsCancelOverlay = document.querySelector('[data-settings-cancel]');
 settingsCancelOverlay.addEventListener('click', () => {
+    // Hide the settings overlay
     document.querySelector("[data-settings-overlay]").style.display = "none";
 });
 
@@ -179,11 +193,13 @@ const saveBtn = document.querySelector("body > dialog:nth-child(5) > div > div >
 saveBtn.addEventListener('click', (event) => {
     event.preventDefault();
     if (themeConfiguration.value === 'day') {
-        ThemeManager.setTheme('day'); // Use ThemeManager to apply the theme
+        // Set the day theme
+        ThemeManager.setTheme('day');
         document.querySelector("[data-settings-overlay]").style.display = "none";
     }
     if (themeConfiguration.value === 'night') {
-        ThemeManager.setTheme('night'); // Use ThemeManager to apply the theme
+        // Set the night theme
+        ThemeManager.setTheme('night');
         document.querySelector("[data-settings-overlay]").style.display = "none";
     }
 });
@@ -223,6 +239,7 @@ const detailsToggle = (event) => {
 
 const detailsClose = document.querySelector('[data-list-close]');
 detailsClose.addEventListener('click', () => {
+    // Close the book details overlay
     document.querySelector("[data-list-active]").style.display = "none";
 });
 
@@ -236,6 +253,7 @@ const showMoreButton = document.querySelector('[data-list-button]');
 
 // Add event listener to the 'Show More' button
 showMoreButton.addEventListener('click', () => {
+    // Handle the 'Show More' button click
     ShowMoreButtonHandler.handleShowMoreClick();
 });
 
