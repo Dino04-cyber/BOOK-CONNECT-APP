@@ -2,6 +2,10 @@
 
 Book Connect is a web application for browsing and exploring a collection of books. You can search for books, view details, and even change the app's theme. It's designed to help book enthusiasts discover new titles and authors.
 
+## About
+
+This project was developed as part of my studies at [CodeSpace](https://www.codespace.co.za/), where I had the opportunity to learn and apply web development skills.
+
 ## Usage
 
 Book Connect is an easy-to-use application with the following features:
@@ -38,7 +42,6 @@ Here are the recent improvements made to the project:
 
 Here is a list of resources and tools used in the development of the Book Connect App:
 
-- Frontend Framework: [React](https://reactjs.org/)
 - Styling: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - Version Control: [Git](https://git-scm.com/)
 - Code Hosting: [GitHub](https://github.com/)
