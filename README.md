@@ -1,34 +1,64 @@
-[Book-connect.pdf](https://github.com/Dino04-cyber/OSVJOV233_FTC2306_GROUPC_Osvaldino-Jovete_Interactive-Web-Apps-IWA19-Final-Capstone-Project/files/12558524/Book-connect.pdf)
-</head>
-<body>
-    <h1>Book Connect App</h1>
+# Book Connect App
 
-  
-  Book Connect is a web application for browsing and exploring a collection of books. 
-  You can search for books, view details, and even change the app's theme. 
-  It's designed to help book enthusiasts discover new titles and authors
+Book Connect is a web application for browsing and exploring a collection of books. You can search for books, view details, and even change the app's theme. It's designed to help book enthusiasts discover new titles and authors.
 
-  <h2>Usage</h2>
-    <ol>
-        <li>Click on the search button to start exploring books(Search feuture does not completely work yet).</li>
-        <li>Use the search options to filter books by author or genre.(Search feuture does not completely work yet)</li>
-        <li>Click on a book preview to see its details.</li>
-        <li>Toggle between the day and night themes for a different visual experience.</li>
-        <li>Click the "Show More" button to load additional book previews.</li>
-    </ol>
-  </body>
+## Usage
 
-  <h2>Changes</h2>
-## Improvements
+Book Connect is an easy-to-use application with the following features:
+
+1. Click on the search button to start exploring books. (Please note that the search feature is under development and may not work completely yet.)
+
+2. Use the search options to filter books by author or genre. (As mentioned earlier, the search feature is under development.)
+
+3. Click on a book preview to see its details.
+
+4. Toggle between the day and night themes for a different visual experience.
+
+5. Click the "Show More" button to load additional book previews.
+
+Please keep in mind that some features are still a work in progress, and we appreciate your patience as we continue to improve the application.
+
+## Changes
+
+### Improvements
 
 Here are the recent improvements made to the project:
 
-1. **Added Documentation Comments**: Improved code readability and understanding by adding documentation comments to explain functions, classes, and important sections of the code.
+- **Added Documentation Comments:** Improved code readability and understanding by adding documentation comments to explain functions, classes, and important sections of the code.
 
-2. **Created Book Class**: Introduced a `Book` class to better organize and manage book-related data and functions, promoting a more structured and object-oriented approach.
+- **Created Book Class:** Introduced a Book class to better organize and manage book-related data and functions, promoting a more structured and object-oriented approach.
 
-3. **Extracted Preview Creation into Function**: Abstracted the process of creating book previews into a dedicated function, enhancing code reusability and maintainability.
+- **Extracted Preview Creation into Function:** Abstracted the process of creating book previews into a dedicated function, enhancing code reusability and maintainability.
 
-4. **Used Consistent Spacing and CamelCase Names**: Ensured code consistency by using consistent spacing and adopting camelCase naming conventions throughout the project.
+- **Used Consistent Spacing and CamelCase Names:** Ensured code consistency by using consistent spacing and adopting camelCase naming conventions throughout the project.
 
-5. **Modularized Concerns and Reduced Duplication**: Reorganized and modularized the codebase to reduce code duplication and make it easier to manage different concerns separately.
+- **Modularized Concerns and Reduced Duplication:** Reorganized and modularized the codebase to reduce code duplication and make it easier to manage different concerns separately.
+
+## Resources Used
+
+Here is a list of resources and tools used in the development of the Book Connect App:
+
+- Frontend Framework: [React](https://reactjs.org/)
+- Styling: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- Version Control: [Git](https://git-scm.com/)
+- Code Hosting: [GitHub](https://github.com/)
+- Text Editor: [Visual Studio Code](https://code.visualstudio.com/)
+- Documentation: [Markdown](https://www.markdownguide.org/)
+
+We would like to express our gratitude to the developers of these technologies and tools, as they have been essential in bringing this project to life.
+
+## File Structure
+
+The project's file structure is organized as follows:
+
+
+
+- `data.js`: This file contains book information and data used by the application.
+
+- `script.js`: The core functionality of the application is implemented in this JavaScript file. It includes functions for searching, displaying book details, and other interactive features.
+
+- `index.html`: This is the main entry point of the web application, where the HTML structure is defined and where the application is loaded.
+
+- `styles.css`: The CSS file used for styling the application and making it visually appealing.
+
+Please note that this is a simplified representation of the file structure. You may have additional files or directories, but these are the primary files relevant to the functionality and structure of your Book Connect App.
